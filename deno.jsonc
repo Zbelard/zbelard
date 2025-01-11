@@ -1,4 +1,6 @@
 {
+  "name": "@zbelard/root",
+  "workspace": ["template"],
   "tasks": {
     "dev": "deno run --watch main.ts"
   },
