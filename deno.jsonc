@@ -1,10 +1,8 @@
 {
-  "name": "@zbelard/root",
-  "workspace": ["template"],
-  "tasks": {
-    "dev": "deno run --watch main.ts"
-  },
+  "name": "@acme/root",
+  "exports": "./main.ts",
+  "nodeModulesDir": "auto",
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@^1.0.10"
   }
 }
