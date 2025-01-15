@@ -5,6 +5,23 @@
    * @description Allow creating node_modules sp pre and post install scripts can be run
    */
   "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "noErrorTruncation": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "useUnknownInCatchVariables": true
+  },
   "tasks": {
     "dev": "deno run db:migrate:dev && deno run kysely:codegen",
     /* ------------------------------------------------------ */
