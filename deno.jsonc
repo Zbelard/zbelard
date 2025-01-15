@@ -1,6 +1,9 @@
 {
   "name": "@acme/root",
   "exports": "./main.ts",
+  /**
+   * @description Allow creating node_modules sp pre and post install scripts can be run
+   */
   "nodeModulesDir": "auto",
   "tasks": {
     "dev": "deno run db:migrate:dev && deno run kysely:codegen",
