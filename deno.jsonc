@@ -3,7 +3,7 @@
   "exports": "./main.ts",
   "nodeModulesDir": "auto",
   "tasks": {
-    "dev": "",
+    "dev": "deno run db:migrate:dev && deno run kysely:codegen",
     /* ------------------------------------------------------ */
     /*                        Database                        */
     /* ------------------------------------------------------ */
