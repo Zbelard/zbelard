@@ -4,13 +4,10 @@
     "jsr:@std/assert@^1.0.10": "1.0.10",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:@ariga/atlas@0.30": "0.30.0",
-    "npm:@ariga/atlas@0.30.0": "0.30.0",
     "npm:@types/pg-cursor@^2.7.2": "2.7.2",
     "npm:@types/pg@^8.11.10": "8.11.10",
-    "npm:cross-env@7.0.3": "7.0.3",
-    "npm:cross-env@^7.0.3": "7.0.3",
-    "npm:kysely-codegen@0.17": "0.17.0_kysely@0.27.5",
-    "npm:kysely-codegen@0.17.0": "0.17.0_kysely@0.27.5",
+    "npm:kysely-codegen@0.17": "0.17.0_kysely@0.27.5_pg@8.13.1",
+    "npm:kysely-codegen@0.17.0": "0.17.0_kysely@0.27.5_pg@8.13.1",
     "npm:kysely@~0.27.5": "0.27.5",
     "npm:pg-cursor@^2.12.1": "2.12.1_pg@8.13.1",
     "npm:pg@^8.13.1": "8.13.1"
@@ -118,20 +115,6 @@
     "concat-map@0.0.1": {
       "integrity": "sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg=="
     },
-    "cross-env@7.0.3": {
-      "integrity": "sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==",
-      "dependencies": [
-        "cross-spawn"
-      ]
-    },
-    "cross-spawn@7.0.6": {
-      "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==",
-      "dependencies": [
-        "path-key",
-        "shebang-command",
-        "which"
-      ]
-    },
     "data-uri-to-buffer@4.0.1": {
       "integrity": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A=="
     },
@@ -230,10 +213,7 @@
     "is-number@7.0.0": {
       "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng=="
     },
-    "isexe@2.0.0": {
-      "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
-    },
-    "kysely-codegen@0.17.0_kysely@0.27.5": {
+    "kysely-codegen@0.17.0_kysely@0.27.5_pg@8.13.1": {
       "integrity": "sha512-C36g6epial8cIOSBEWGI9sRfkKSsEzTcivhjPivtYFQnhMdXnrVFaUe7UMZHeSdXaHiWDqDOkReJgWLD8nPKdg==",
       "dependencies": [
         "chalk@4.1.2",
@@ -243,6 +223,7 @@
         "kysely",
         "micromatch",
         "minimist",
+        "pg",
         "pluralize"
       ]
     },
@@ -290,9 +271,6 @@
     },
     "path-is-absolute@1.0.1": {
       "integrity": "sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg=="
-    },
-    "path-key@3.1.1": {
-      "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
     },
     "path-parse@1.0.7": {
       "integrity": "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw=="
@@ -416,15 +394,6 @@
         "supports-preserve-symlinks-flag"
       ]
     },
-    "shebang-command@2.0.0": {
-      "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==",
-      "dependencies": [
-        "shebang-regex"
-      ]
-    },
-    "shebang-regex@3.0.0": {
-      "integrity": "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="
-    },
     "shelljs.exec@1.1.8": {
       "integrity": "sha512-vFILCw+lzUtiwBAHV8/Ex8JsFjelFMdhONIsgKNLgTzeRckp2AOYRQtHJE/9LhNvdMmE27AGtzWx0+DHpwIwSw=="
     },
@@ -466,12 +435,6 @@
     "web-streams-polyfill@3.3.3": {
       "integrity": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw=="
     },
-    "which@2.0.2": {
-      "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==",
-      "dependencies": [
-        "isexe"
-      ]
-    },
     "wrappy@1.0.2": {
       "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
     },
@@ -481,15 +444,20 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@^1.0.10",
-      "npm:@ariga/atlas@0.30",
-      "npm:@types/pg-cursor@^2.7.2",
-      "npm:@types/pg@^8.11.10",
-      "npm:cross-env@^7.0.3",
-      "npm:kysely-codegen@0.17",
-      "npm:kysely@~0.27.5",
-      "npm:pg-cursor@^2.12.1",
-      "npm:pg@^8.13.1"
-    ]
+      "jsr:@std/assert@^1.0.10"
+    ],
+    "members": {
+      "db": {
+        "dependencies": [
+          "npm:@ariga/atlas@0.30",
+          "npm:@types/pg-cursor@^2.7.2",
+          "npm:@types/pg@^8.11.10",
+          "npm:kysely-codegen@0.17",
+          "npm:kysely@~0.27.5",
+          "npm:pg-cursor@^2.12.1",
+          "npm:pg@^8.13.1"
+        ]
+      }
+    }
   }
 }

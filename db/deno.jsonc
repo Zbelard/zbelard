@@ -1,0 +1,33 @@
+{
+  "name": "@zbelard/db",
+  "exports": "./mod.ts",
+  "tasks": {
+    "dev:prepare": "deno task migrate:dev && deno task kysely:codegen",
+    /**
+     * @description Needed when previous migration files are edited
+     */
+    "rehash": "npx @ariga/atlas migrate hash --dir file://migrations",
+    /**
+      * @description Create a new migration file. An optional file name can be provided
+      * @example `deno task migrate:new add_user_table`
+      */
+    "migrate:new": "deno run rehash && npx @ariga/atlas migrate new --dir file://migrations",
+    /**
+      * @description Apply all migrations to development database
+      */
+    "migrate:dev": "deno run rehash && npx @ariga/atlas migrate apply --dir file://migrations --url \"postgres://user:pass@localhost:5432/zbelard?sslmode=disable\"",
+    /**
+      * @description Generate Kysely types from local database schema
+      */
+    "kysely:codegen": "kysely-codegen --out-file=db.d.ts --url postgres://user:pass@localhost:5432/zbelard --dialect postgres"
+  },
+  "imports": {
+    "@ariga/atlas": "npm:@ariga/atlas@^0.30.0",
+    "@types/pg": "npm:@types/pg@^8.11.10",
+    "@types/pg-cursor": "npm:@types/pg-cursor@^2.7.2",
+    "kysely": "npm:kysely@^0.27.5",
+    "kysely-codegen": "npm:kysely-codegen@^0.17.0",
+    "pg": "npm:pg@^8.13.1",
+    "pg-cursor": "npm:pg-cursor@^2.12.1"
+  }
+}

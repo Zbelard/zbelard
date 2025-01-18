@@ -1,9 +1,5 @@
 {
-  "name": "@acme/root",
-  "exports": "./main.ts",
-  /**
-   * @description Allow creating node_modules sp pre and post install scripts can be run
-   */
+  /** Allow creating node_modules so pre and post install scripts can be run */
   "nodeModulesDir": "auto",
   "compilerOptions": {
     "noErrorTruncation": true,
@@ -22,38 +18,11 @@
     "strictNullChecks": true,
     "useUnknownInCatchVariables": true
   },
+  "workspace": ["./db"],
   "tasks": {
-    "dev": "deno run db:migrate:dev && deno run kysely:codegen",
-    /* ------------------------------------------------------ */
-    /*                        Database                        */
-    /* ------------------------------------------------------ */
-    /**
-     * @description Needed when previous migration files are edited
-     */
-    "db:rehash": "npx @ariga/atlas migrate hash --dir file://db/migrations",
-    /**
-     * @description Create a new migration file. An optional file name can be provided
-     * @example `deno task db:migrate:new add_user_table`
-     */
-    "db:migrate:new": "deno run db:rehash && npx @ariga/atlas migrate new --dir file://db/migrations",
-    /**
-     * @description Apply all migrations to development database
-     */
-    "db:migrate:dev": "deno run db:rehash && npx @ariga/atlas migrate apply --dir file://db/migrations --url \"postgres://user:pass@localhost:5432/zbelard?sslmode=disable\"",
-    /**
-     * @description Generate Kysely types from local database schema
-     */
-    "kysely:codegen": "kysely-codegen --out-file=db/db.d.ts --url postgres://user:pass@localhost:5432/zbelard --dialect postgres"
+    "dev": "deno task --recursive dev:prepare"
   },
   "imports": {
-    "@ariga/atlas": "npm:@ariga/atlas@^0.30.0",
-    "@std/assert": "jsr:@std/assert@^1.0.10",
-    "@types/pg": "npm:@types/pg@^8.11.10",
-    "@types/pg-cursor": "npm:@types/pg-cursor@^2.7.2",
-    "cross-env": "npm:cross-env@^7.0.3",
-    "kysely": "npm:kysely@^0.27.5",
-    "kysely-codegen": "npm:kysely-codegen@^0.17.0",
-    "pg": "npm:pg@^8.13.1",
-    "pg-cursor": "npm:pg-cursor@^2.12.1"
+    "@std/assert": "jsr:@std/assert@^1.0.10"
   }
 }
