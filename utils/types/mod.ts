@@ -8,3 +8,4 @@ export type NumberStringOrLiteral<T extends `${number}`> =
   | (`${number}` & {});
 
 export type SafeExclude<T, U extends T> = T extends U ? never : T;
+export type SafeOmit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
