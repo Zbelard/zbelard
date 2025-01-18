@@ -6,3 +6,5 @@ Zbelard is a full-stack JS framework... batteries-included and opinionated... as
 ```bash
 deno install --allow-scripts
 ```
+
+<!-- TODO add docs about db migrations -->
