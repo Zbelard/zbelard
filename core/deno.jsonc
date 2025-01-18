@@ -1,0 +1,6 @@
+{
+  "name": "@zbelard/core",
+  "exports": {
+    "./repos": "./repos/mod.ts"
+  }
+}
