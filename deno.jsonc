@@ -18,7 +18,7 @@
     "strictNullChecks": true,
     "useUnknownInCatchVariables": true
   },
-  "workspace": ["./db"],
+  "workspace": ["./db", "./utils/*"],
   "tasks": {
     "dev": "deno task --recursive dev:prepare"
   },
