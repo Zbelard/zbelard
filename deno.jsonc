@@ -18,11 +18,15 @@
     "strictNullChecks": true,
     "useUnknownInCatchVariables": true
   },
-  "workspace": ["./db", "./core", "./utils/*"],
+  "workspace": ["./db", "./core", "./api", "./utils"],
   "tasks": {
-    "dev": "deno task --recursive dev:prepare"
+    // TODO fix infinite loop when running tasks
+    "dev:prepare": "deno task --recursive dev:prepare",
+    "dev": "deno task dev:prepare && deno task --recursive dev"
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@^1.0.10"
+    "@std/assert": "jsr:@std/assert@^1.0.10",
+    "next-auth": "npm:next-auth@^4.24.11",
+    "zod": "npm:zod@^3.24.1"
   }
 }

@@ -1,5 +1,5 @@
 import type Kysely from "kysely";
-import type { SafeOmit } from "@zbelard/type-utils";
+import type { SafeOmit } from "@zbelard/utils/types";
 import type { DB as GeneratedDB } from "./db.d.ts";
 
 export type { Kysely };

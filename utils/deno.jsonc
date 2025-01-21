@@ -1,0 +1,11 @@
+{
+  /** This package is for utils that are safe on the client and the server */
+  "name": "@zbelard/utils",
+  "exports": {
+    "./types": "./types/mod.ts",
+    "./transformer": "./transformer/mod.ts"
+  },
+  "imports": {
+    "superjson": "npm:superjson@^2.2.2"
+  }
+}

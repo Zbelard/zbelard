@@ -1,0 +1,12 @@
+{
+  "name": "@zbelard/api",
+  "exports": "./mod.ts",
+  "tasks": {
+    "dev": "deno run server.ts"
+  },
+  "imports": {
+    "@trpc/server": "npm:@trpc/server@^11.0.0-rc.708",
+    "@types/cors": "npm:@types/cors@^2.8.17",
+    "cors": "npm:cors@^2.8.5"
+  }
+}
