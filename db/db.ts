@@ -1,7 +1,7 @@
+import { Kysely, ParseJSONResultsPlugin, PostgresDialect } from "kysely";
 import type { DB } from "./db.d.ts";
 // @ts-types="@types/pg"
 import pg from "pg";
-import { Kysely, ParseJSONResultsPlugin, PostgresDialect } from "kysely";
 // @ts-types="@types/pg-cursor"
 import Cursor from "pg-cursor";
 
