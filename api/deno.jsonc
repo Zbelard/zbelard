@@ -2,7 +2,7 @@
   "name": "@zbelard/api",
   "exports": "./mod.ts",
   "tasks": {
-    "dev": "deno run --allow-env --allow-net server.ts"
+    "dev": "deno run -A server.ts"
   },
   "imports": {
     "@trpc/server": "npm:@trpc/server@^11.0.0-rc.708",
