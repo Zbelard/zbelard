@@ -9,7 +9,7 @@ const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
       transformer,
-      url: "http://localhost:2022/trpc",
+      url: "http://localhost:2022",
       // You can pass any HTTP headers you wish here
       // async headers() {
       //   return {
