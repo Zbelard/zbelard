@@ -1,5 +1,11 @@
 import React from "react";
+import { CombinedProviders } from "./providers/CombinedProviders.tsx";
+import { Home } from "./pages/Home.tsx";
 
 export function App() {
-  return <div>Dashboard</div>
+  return (
+    <CombinedProviders>
+      <Home />
+    </CombinedProviders>
+  );
 }

@@ -5,7 +5,10 @@
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:@ariga/atlas@0.30": "0.30.0",
     "npm:@deno/vite-plugin@^1.0.2": "1.0.2_vite@6.0.11__@types+node@22.5.4_@types+node@22.5.4",
-    "npm:@trpc/server@^11.0.0-rc.708": "11.0.0-rc.708_typescript@5.7.3",
+    "npm:@tanstack/react-query@^5.64.2": "5.64.2_react@19.0.0",
+    "npm:@trpc/client@^11.0.0-rc.724": "11.0.0-rc.724_@trpc+server@11.0.0-rc.724__typescript@5.7.3_typescript@5.7.3",
+    "npm:@trpc/react-query@^11.0.0-rc.724": "11.0.0-rc.724_@tanstack+react-query@5.64.2__react@19.0.0_@trpc+client@11.0.0-rc.724__@trpc+server@11.0.0-rc.724___typescript@5.7.3__typescript@5.7.3_@trpc+server@11.0.0-rc.724__typescript@5.7.3_react@19.0.0_react-dom@19.0.0__react@19.0.0_typescript@5.7.3",
+    "npm:@trpc/server@^11.0.0-rc.724": "11.0.0-rc.724_typescript@5.7.3",
     "npm:@types/cors@^2.8.17": "2.8.17",
     "npm:@types/node@*": "22.5.4",
     "npm:@types/pg-cursor@^2.7.2": "2.7.2",
@@ -371,8 +374,36 @@
         "@swc/counter"
       ]
     },
-    "@trpc/server@11.0.0-rc.708_typescript@5.7.3": {
-      "integrity": "sha512-LIq0PRf/6ZTz7gQEgiYKGbyf7H9Xz4nWwuT8Lkk1fw94F5GQgiq3SywFBTE45Tpq22FmssQz0fHEdwsG6GJCzQ==",
+    "@tanstack/query-core@5.64.2": {
+      "integrity": "sha512-hdO8SZpWXoADNTWXV9We8CwTkXU88OVWRBcsiFrk7xJQnhm6WRlweDzMD+uH+GnuieTBVSML6xFa17C2cNV8+g=="
+    },
+    "@tanstack/react-query@5.64.2_react@19.0.0": {
+      "integrity": "sha512-3pakNscZNm8KJkxmovvtZ4RaXLyiYYobwleTMvpIGUoKRa8j8VlrQKNl5W8VUEfVfZKkikvXVddLuWMbcSCA1Q==",
+      "dependencies": [
+        "@tanstack/query-core",
+        "react"
+      ]
+    },
+    "@trpc/client@11.0.0-rc.724_@trpc+server@11.0.0-rc.724__typescript@5.7.3_typescript@5.7.3": {
+      "integrity": "sha512-Ou62Zw2wmfJ/X9/YlSacrGbkLP7FE1Ohv/bgQJYzWctSeEkQkIAsFOgy7a/T0Ry7kD78w3YTf7U1MKOf5X3NNA==",
+      "dependencies": [
+        "@trpc/server",
+        "typescript"
+      ]
+    },
+    "@trpc/react-query@11.0.0-rc.724_@tanstack+react-query@5.64.2__react@19.0.0_@trpc+client@11.0.0-rc.724__@trpc+server@11.0.0-rc.724___typescript@5.7.3__typescript@5.7.3_@trpc+server@11.0.0-rc.724__typescript@5.7.3_react@19.0.0_react-dom@19.0.0__react@19.0.0_typescript@5.7.3": {
+      "integrity": "sha512-m98fkA7h51FKWe16fQACQN0aZJzLa7emtdBVqJqzCg6h8OTbexNbHx2NYpF3zAWZft5sGTVSljL9ixWFqLUYqg==",
+      "dependencies": [
+        "@tanstack/react-query",
+        "@trpc/client",
+        "@trpc/server",
+        "react",
+        "react-dom",
+        "typescript"
+      ]
+    },
+    "@trpc/server@11.0.0-rc.724_typescript@5.7.3": {
+      "integrity": "sha512-kdDDwLYWGlnoXxgNeOzgb620lsnueEXMn8PLPDZW5Lpm5T3kJPT4F0JYTZINk/DM0e7q4iWx488FvwBNpNhACA==",
       "dependencies": [
         "typescript"
       ]
@@ -1143,7 +1174,7 @@
     "members": {
       "api": {
         "dependencies": [
-          "npm:@trpc/server@^11.0.0-rc.708",
+          "npm:@trpc/server@^11.0.0-rc.724",
           "npm:@types/cors@^2.8.17",
           "npm:cors@^2.8.5"
         ]
@@ -1151,6 +1182,9 @@
       "apps/dashboard": {
         "dependencies": [
           "npm:@deno/vite-plugin@^1.0.2",
+          "npm:@tanstack/react-query@^5.64.2",
+          "npm:@trpc/client@^11.0.0-rc.724",
+          "npm:@trpc/react-query@^11.0.0-rc.724",
           "npm:@types/react-dom@^19.0.3",
           "npm:@types/react@^19.0.8",
           "npm:@vitejs/plugin-react-swc@^3.7.2",
