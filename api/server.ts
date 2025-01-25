@@ -4,8 +4,14 @@ import { appRouter } from "./router/mod.ts";
 // @ts-types="@types/cors"
 import cors from "cors";
 
-createHTTPServer({
+const server = createHTTPServer({
   middleware: cors(),
   router: appRouter,
   createContext,
-}).listen(2022);
+});
+
+const PORT = 2022;
+
+server.listen(PORT, () => {
+  console.log(`🚀 Server started on http://localhost:${PORT}`)
+});
