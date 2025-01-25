@@ -1,16 +1,22 @@
-import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { db } from "@zbelard/db";
 import { Repos } from "@zbelard/core/repos";
-import { getSession } from 'next-auth/react';
- 
-export const createContext = async (opts: CreateNextContextOptions) => {
+import { getSession } from "next-auth/react";
+import type { NodeHTTPCreateContextFnOptions } from "@trpc/server/adapters/node-http";
+import type { IncomingMessage, ServerResponse } from "node:http";
+
+export const createContext = async (
+  opts: NodeHTTPCreateContextFnOptions<
+    IncomingMessage,
+    ServerResponse<IncomingMessage>
+  >,
+) => {
   const session = await getSession({ req: opts.req });
- 
+
   return {
     session,
     db,
-    repos: Repos
+    repos: Repos,
   };
 };
- 
+
 export type Context = Awaited<ReturnType<typeof createContext>>;
