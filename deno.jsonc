@@ -16,9 +16,14 @@
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
     "strictNullChecks": true,
-    "useUnknownInCatchVariables": true
+    "useUnknownInCatchVariables": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "deno.ns"
+    ]
   },
-  "workspace": ["./db", "./core", "./api", "./utils"],
+  "workspace": ["./db", "./core", "./api", "./utils", "./apps/*"],
   "tasks": {
     // TODO fix infinite loop when running tasks
     "dev:prepare": "deno task --recursive dev:prepare",
